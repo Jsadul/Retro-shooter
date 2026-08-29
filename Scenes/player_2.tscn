@@ -4,14 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://btcrokreepf8k" path="res://icon.svg" id="2_a3adp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cgts5"]
-size = Vector2(38, 38)
+size = Vector2(50, 50)
 
 [node name="Player2" type="CharacterBody2D" unique_id=1007187380]
 script = ExtResource("1_cgts5")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1539898511]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_a3adp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=680364419]
