@@ -1,19 +1,30 @@
 [gd_scene format=3 uid="uid://cq6frxh1ndl0b"]
 
-[ext_resource type="Texture2D" uid="uid://btcrokreepf8k" path="res://icon.svg" id="1_2mvbs"]
 [ext_resource type="Script" uid="uid://cedvp6lfyxye4" path="res://Scripts/player_1.gd" id="1_tmdyv"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmdyv"]
-size = Vector2(51, 51)
+[ext_resource type="PackedScene" uid="uid://cgty2p5h507do" path="res://Scenes/bullet.tscn" id="2_p0e4v"]
+[ext_resource type="Texture2D" uid="uid://cjmts03xu02l" path="res://Assets/Rose.png" id="2_tmdyv"]
 
 [node name="Player1" type="CharacterBody2D" unique_id=1007187380]
+position = Vector2(0, 2)
 script = ExtResource("1_tmdyv")
-metadata/_edit_group_ = true
+bullet = ExtResource("2_p0e4v")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1539898511]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_2mvbs")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=381521237]
+rotation = 1.5707964
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_tmdyv")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=680364419]
-position = Vector2(-0.5, 0.5)
-shape = SubResource("RectangleShape2D_tmdyv")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1249072119]
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(0, -48, -40, 59, 0, 42, 41, 59)
+
+[node name="Muzzle" type="Marker2D" parent="." unique_id=328356668]
+position = Vector2(39, 0)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=683649858]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D" unique_id=1167717220]
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(0, -48, -40, 59, 0, 42, 41, 59)

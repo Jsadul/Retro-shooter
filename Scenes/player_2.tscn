@@ -1,18 +1,28 @@
 [gd_scene format=3 uid="uid://drynongpc24eq"]
 
 [ext_resource type="Script" uid="uid://dd4vm3o165fxl" path="res://Scripts/player_2.gd" id="1_cgts5"]
-[ext_resource type="Texture2D" uid="uid://btcrokreepf8k" path="res://icon.svg" id="2_a3adp"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cgts5"]
-size = Vector2(50, 50)
+[ext_resource type="Texture2D" uid="uid://bxk7wcf0sbhyv" path="res://Assets/Cyan.png" id="2_cgts5"]
 
 [node name="Player2" type="CharacterBody2D" unique_id=1007187380]
+position = Vector2(-1, -4)
 script = ExtResource("1_cgts5")
-metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1539898511]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_a3adp")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=78166586]
+rotation = 1.5707964
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_cgts5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=680364419]
-shape = SubResource("RectangleShape2D_cgts5")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=818736173]
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(0, -48, -41, 59, 0, 42, 41, 59)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1292756586]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D" unique_id=509457243]
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(0, -48, -41, 59, 0, 42, 41, 59)
+
+[node name="Muzzle" type="Marker2D" parent="." unique_id=1395659658]
+position = Vector2(38, 0)
