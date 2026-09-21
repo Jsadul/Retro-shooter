@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://cq6frxh1ndl0b" path="res://Scenes/player_1.tscn" id="1_e2o6t"]
 [ext_resource type="Texture2D" uid="uid://bjgxf5lssi5f6" path="res://Assets/Background.png" id="1_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://drynongpc24eq" path="res://Scenes/player_2.tscn" id="2_feb5d"]
-[ext_resource type="PackedScene" uid="uid://cgty2p5h507do" path="res://Scenes/bullet.tscn" id="4_3dryh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e2o6t"]
 size = Vector2(1947, 20)
@@ -19,22 +18,17 @@ size = Vector2(20, 1101)
 
 [node name="Game" type="Node2D" unique_id=708080414]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=890187793]
-position = Vector2(971.49994, 546.5)
-scale = Vector2(0.31722003, 0.17529297)
-texture = ExtResource("1_wrm1d")
-
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=843838085]
-position = Vector2(2827, 544)
-scale = Vector2(0.31722003, 0.17529297)
+[node name="Background" type="Sprite2D" parent="." unique_id=1590924785]
+position = Vector2(1123, 647)
+scale = Vector2(0.5407715, 0.356486)
 texture = ExtResource("1_wrm1d")
 
 [node name="Player1" parent="." unique_id=1007187380 instance=ExtResource("1_e2o6t")]
-position = Vector2(280, 339)
+position = Vector2(1560, 552)
 
 [node name="Player2" parent="." unique_id=1854510553 instance=ExtResource("2_feb5d")]
-position = Vector2(528, 265)
-bullet = ExtResource("4_3dryh")
+position = Vector2(424, 552)
+rotation = -3.1415927
 
 [node name="Barrier" type="StaticBody2D" parent="." unique_id=1437732988]
 

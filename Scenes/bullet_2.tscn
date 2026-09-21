@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://csafq3ak326hj"]
+
+[ext_resource type="Script" uid="uid://lkddqx2m0mis" path="res://Scripts/bullet_2.gd" id="1_xs6d3"]
+[ext_resource type="Texture2D" uid="uid://bxk7wcf0sbhyv" path="res://Assets/Cyan.png" id="2_mvdab"]
+
+[node name="bullet_2" type="Area2D" unique_id=993640233]
+script = ExtResource("1_xs6d3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2063300521]
+rotation = 1.5707964
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_mvdab")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=10744435]
+polygon = PackedVector2Array(-16, -11, -16, -11, 14, 0, -15, 11, -11, 0)

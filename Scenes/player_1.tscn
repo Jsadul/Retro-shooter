@@ -3,6 +3,11 @@
 [ext_resource type="Script" uid="uid://cedvp6lfyxye4" path="res://Scripts/player_1.gd" id="1_tmdyv"]
 [ext_resource type="PackedScene" uid="uid://cgty2p5h507do" path="res://Scenes/bullet.tscn" id="2_p0e4v"]
 [ext_resource type="Texture2D" uid="uid://cjmts03xu02l" path="res://Assets/Rose.png" id="2_tmdyv"]
+[ext_resource type="Texture2D" uid="uid://bl51ryytih4cn" path="res://Assets/P1_hex_empty.png" id="4_aatkl"]
+[ext_resource type="Texture2D" uid="uid://dr1et42tegi3m" path="res://Assets/P1_hex_full.png" id="5_lp8rx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jkush"]
+font_size = 150
 
 [node name="Player1" type="CharacterBody2D" unique_id=1007187380]
 position = Vector2(0, 2)
@@ -20,7 +25,7 @@ scale = Vector2(0.5, 0.5)
 polygon = PackedVector2Array(0, -48, -40, 59, 0, 42, 41, 59)
 
 [node name="Muzzle" type="Marker2D" parent="." unique_id=328356668]
-position = Vector2(39, 0)
+position = Vector2(51, 0)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=683649858]
 
@@ -28,3 +33,56 @@ position = Vector2(39, 0)
 rotation = 1.5707964
 scale = Vector2(0.5, 0.5)
 polygon = PackedVector2Array(0, -48, -40, 59, 0, 42, 41, 59)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1741947742]
+scale = Vector2(0.2, 0.2)
+transform = Transform2D(0.2, 0, 0, 0.2, 0, 0)
+
+[node name="Hex_bar" type="TextureProgressBar" parent="CanvasLayer" unique_id=628544658]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 6920.0
+offset_right = 7688.0
+offset_bottom = 768.0
+grow_horizontal = 0
+value = 59.0
+fill_mode = 3
+texture_under = ExtResource("4_aatkl")
+texture_progress = ExtResource("5_lp8rx")
+
+[node name="Hex_lable" type="Label" parent="CanvasLayer/Hex_bar" unique_id=1180109645]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 10.508
+anchor_top = 0.45200002
+anchor_right = 10.508
+anchor_bottom = 0.45200002
+offset_left = -7810.1445
+offset_top = -72.13602
+offset_right = -7423.1445
+offset_bottom = 132.86398
+grow_horizontal = 2
+grow_vertical = 2
+text = "100%"
+label_settings = SubResource("LabelSettings_jkush")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=448340477]
+emitting = false
+amount = 60
+lifetime = 0.8
+one_shot = true
+explosiveness = 1.0
+spread = 40.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 300.0
+initial_velocity_max = 700.0
+angular_velocity_min = -400.0
+angular_velocity_max = 400.0
+damping_min = 300.0
+damping_max = 700.0
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+color = Color(0.3498241, 3.730133e-07, 0.20380312, 1)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

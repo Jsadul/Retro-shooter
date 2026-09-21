@@ -2,10 +2,17 @@
 
 [ext_resource type="Script" uid="uid://dd4vm3o165fxl" path="res://Scripts/player_2.gd" id="1_cgts5"]
 [ext_resource type="Texture2D" uid="uid://bxk7wcf0sbhyv" path="res://Assets/Cyan.png" id="2_cgts5"]
+[ext_resource type="PackedScene" uid="uid://cgty2p5h507do" path="res://Scenes/bullet.tscn" id="2_eus2p"]
+[ext_resource type="Texture2D" uid="uid://ctq735575c2db" path="res://Assets/P2_hex_empty.png" id="4_eus2p"]
+[ext_resource type="Texture2D" uid="uid://vju7gf7gkr00" path="res://Assets/P2_hex_full.png" id="5_6cafw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wrm1d"]
+font_size = 150
 
 [node name="Player2" type="CharacterBody2D" unique_id=1007187380]
-position = Vector2(-1, -4)
+position = Vector2(20, 0)
 script = ExtResource("1_cgts5")
+bullet = ExtResource("2_eus2p")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=78166586]
 rotation = 1.5707964
@@ -17,6 +24,9 @@ rotation = 1.5707964
 scale = Vector2(0.5, 0.5)
 polygon = PackedVector2Array(0, -48, -41, 59, 0, 42, 41, 59)
 
+[node name="Muzzle" type="Marker2D" parent="." unique_id=1395659658]
+position = Vector2(51, 0)
+
 [node name="Area2D" type="Area2D" parent="." unique_id=1292756586]
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D" unique_id=509457243]
@@ -24,5 +34,48 @@ rotation = 1.5707964
 scale = Vector2(0.5, 0.5)
 polygon = PackedVector2Array(0, -48, -41, 59, 0, 42, 41, 59)
 
-[node name="Muzzle" type="Marker2D" parent="." unique_id=1395659658]
-position = Vector2(38, 0)
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=161491593]
+scale = Vector2(0.2, 0.2)
+transform = Transform2D(0.2, 0, 0, 0.2, 0, 0)
+
+[node name="Hex_bar" type="TextureProgressBar" parent="CanvasLayer" unique_id=1098018600]
+offset_right = 768.0
+offset_bottom = 768.0
+value = 59.0
+fill_mode = 3
+texture_under = ExtResource("4_eus2p")
+texture_progress = ExtResource("5_6cafw")
+
+[node name="Hex_lable" type="Label" parent="CanvasLayer/Hex_bar" unique_id=1731736293]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.537
+anchor_top = 0.46
+anchor_right = 0.537
+anchor_bottom = 0.46
+offset_left = -187.41602
+offset_top = -93.28
+offset_right = 199.58398
+offset_bottom = 111.72
+grow_horizontal = 2
+grow_vertical = 2
+text = "100%"
+label_settings = SubResource("LabelSettings_wrm1d")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1697509572]
+emitting = false
+amount = 60
+lifetime = 0.8
+one_shot = true
+explosiveness = 1.0
+spread = 40.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 300.0
+initial_velocity_max = 700.0
+angular_velocity_min = -400.0
+angular_velocity_max = 400.0
+damping_min = 300.0
+damping_max = 700.0
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+color = Color(6.738305e-07, 0.2746303, 0.25380066, 1)
