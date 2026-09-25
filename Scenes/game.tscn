@@ -27,10 +27,12 @@ texture = ExtResource("1_wrm1d")
 
 [node name="Player1" parent="." unique_id=1007187380 instance=ExtResource("1_e2o6t")]
 position = Vector2(1560, 552)
+collision_layer = 1
 
 [node name="Player2" parent="." unique_id=1854510553 instance=ExtResource("2_feb5d")]
 position = Vector2(424, 552)
 rotation = -3.1415927
+collision_layer = 1
 
 [node name="Barrier" type="StaticBody2D" parent="." unique_id=1437732988]
 

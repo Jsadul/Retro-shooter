@@ -12,7 +12,8 @@ func get_input():
 @export var bullet : PackedScene
 @export var max_health = 100
 @export var health = 0
-@export var damage = 5
+@export var damage = 50
+@export var heal_value = 20
 var recoil_strength = 1200
 var rotation_direction = 0
 var recoil_velocity = Vector2.ZERO
@@ -54,6 +55,8 @@ func _on_hit(bullet):
 		queue_free()
 
 func _on_heal_ditect_area_entered(area: Area2D) -> void:
-	health += 50
+	health += heal_value
+	if health > max_health:
+		health=max_health
 	print("heal")
 	area.queue_free()

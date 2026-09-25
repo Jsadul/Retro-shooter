@@ -1,21 +1,16 @@
 [gd_scene format=3 uid="uid://dhi5gvkjsquku"]
 
 [ext_resource type="Texture2D" uid="uid://dgoc43oxm66lr" path="res://Assets/Heal.png" id="1_2bthj"]
-[ext_resource type="Script" uid="uid://chi8kg8krbfl4" path="res://Scripts/heal.gd" id="1_vfgpi"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vbhc8"]
-size = Vector2(98, 90)
 
 [node name="Heal" type="Area2D" unique_id=1703960650]
-script = ExtResource("1_vfgpi")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1302843702]
+position = Vector2(-1, -3)
+polygon = PackedVector2Array(80, 56, 72, 48, 64, 40, 48, 40, 40, 48, 32, 56, 32, 64, 32, 72, 40, 88, 80, 128, 120, 88, 128, 72, 128, 56, 112, 40, 96, 40)
 
 [node name="Heal" type="Sprite2D" parent="." unique_id=396568673]
 position = Vector2(78, 78)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_2bthj")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2085696427]
-position = Vector2(80, 72)
-shape = SubResource("RectangleShape2D_vbhc8")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

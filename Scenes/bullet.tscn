@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://chtrei7h22de" path="res://Assets/Yellow.png" id="2_oduel"]
 
 [node name="Bullet" type="Area2D" unique_id=339058199]
-collision_layer = 2
 script = ExtResource("1_oduel")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1050722412]
