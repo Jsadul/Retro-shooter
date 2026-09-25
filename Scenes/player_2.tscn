@@ -30,8 +30,9 @@ position = Vector2(51, 0)
 [node name="Area2D" type="Area2D" parent="." unique_id=1292756586]
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D" unique_id=509457243]
+position = Vector2(-4, 0)
 rotation = 1.5707964
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.7, 0.7)
 polygon = PackedVector2Array(0, -48, -41, 59, 0, 42, 41, 59)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=161491593]

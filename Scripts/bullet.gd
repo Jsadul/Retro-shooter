@@ -1,6 +1,6 @@
 extends Area2D
 
-var speed = 750
+var speed = 800
 var shooter: Node
 
 func _physics_process(delta):

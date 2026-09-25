@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://cq6frxh1ndl0b" path="res://Scenes/player_1.tscn" id="1_e2o6t"]
 [ext_resource type="Texture2D" uid="uid://bjgxf5lssi5f6" path="res://Assets/Background.png" id="1_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://drynongpc24eq" path="res://Scenes/player_2.tscn" id="2_feb5d"]
+[ext_resource type="Script" uid="uid://cpu6s4n2q41ud" path="res://Scripts/heal_spawn.gd" id="4_3dryh"]
+[ext_resource type="PackedScene" uid="uid://dhi5gvkjsquku" path="res://Scenes/heal.tscn" id="5_wowpa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e2o6t"]
 size = Vector2(1947, 20)
@@ -47,3 +49,7 @@ shape = SubResource("RectangleShape2D_fc0e3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Barrier" unique_id=1835715488]
 position = Vector2(1920, 539.5)
 shape = SubResource("RectangleShape2D_7jktm")
+
+[node name="Heal_spawn" type="Node" parent="." unique_id=28464166]
+script = ExtResource("4_3dryh")
+heal_scene = ExtResource("5_wowpa")
