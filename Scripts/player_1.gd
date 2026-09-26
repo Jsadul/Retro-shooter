@@ -12,7 +12,7 @@ func get_input():
 @export var bullet : PackedScene
 @export var max_health = 100
 @export var health = 0
-@export var damage = 50
+@export var damage = 5
 @export var heal_value = 20
 var recoil_strength = 1200
 var rotation_direction = 0
