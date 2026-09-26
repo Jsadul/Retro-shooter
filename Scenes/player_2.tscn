@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://cgty2p5h507do" path="res://Scenes/bullet.tscn" id="2_eus2p"]
 [ext_resource type="Texture2D" uid="uid://ctq735575c2db" path="res://Assets/P2_hex_empty.png" id="4_eus2p"]
 [ext_resource type="Texture2D" uid="uid://vju7gf7gkr00" path="res://Assets/P2_hex_full.png" id="5_6cafw"]
+[ext_resource type="AudioStream" uid="uid://byyr00npym62y" path="res://Assets/hitHurt.mp3" id="6_6cafw"]
+[ext_resource type="AudioStream" uid="uid://dy5rywm6hkxkw" path="res://Assets/healsound.mp3" id="7_mtyrt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wrm1d"]
 font_size = 150
@@ -33,7 +35,7 @@ collision_mask = 2
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D" unique_id=509457243]
 position = Vector2(-4, 0)
 rotation = 1.5707964
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.6, 0.6)
 polygon = PackedVector2Array(0, -48, -41, 59, 0, 42, 41, 59)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=161491593]
@@ -89,5 +91,11 @@ collision_mask = 4
 rotation = 1.5707964
 scale = Vector2(0.2, 0.2)
 polygon = PackedVector2Array(0, -48, -40, 59, 0, 42, 41, 59)
+
+[node name="HitHurt" type="AudioStreamPlayer" parent="." unique_id=1387381237]
+stream = ExtResource("6_6cafw")
+
+[node name="Healsound" type="AudioStreamPlayer" parent="." unique_id=412676835]
+stream = ExtResource("7_mtyrt")
 
 [connection signal="area_entered" from="HealDitect" to="." method="_on_heal_ditect_area_entered"]

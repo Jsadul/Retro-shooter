@@ -48,16 +48,16 @@ func take_hit(bullet):
 
 func _on_hit(bullet):
 	health -= damage
-	$CanvasLayer/Hex_bar.value = health
-	$CanvasLayer/Hex_bar/Hex_lable.text = str(health) + "%"
 	$CPUParticles2D.global_rotation = bullet.global_rotation
 	$CPUParticles2D.restart()
+	$HitHurt.play()
 	print(name, " hit, health: ", health)
 	if health < 1:
 		queue_free()
 
 func _on_heal_ditect_area_entered(area: Area2D) -> void:
 	health += heal_value
+	$Healsound.play()
 	if health > max_health:
 		health=max_health
 	print("heal")
