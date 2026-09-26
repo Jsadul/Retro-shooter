@@ -6,14 +6,18 @@ func get_input():
 	velocity += recoil_velocity
 	if Input.is_action_just_pressed("Shoot_2"):
 		shoot()
+	if Input.is_action_just_pressed("T1"):
+		$tutorial.hide()
+
 #common code
 @export var speed = 500
 @export var rotation_speed = 5
 @export var bullet : PackedScene
 @export var max_health = 100
 @export var health = 0
-@export var damage = 5
+@export var damage = 25
 @export var heal_value = 20
+var out_of_bounds = Vector2(3000,3000)
 var recoil_strength = 1200
 var rotation_direction = 0
 var recoil_velocity = Vector2.ZERO
@@ -42,6 +46,8 @@ func _ready():
 	$CanvasLayer/Hex_bar.value = max_health
 	health = max_health
 	$CanvasLayer/Hex_bar/Hex_lable.text = str(health) + "%"
+	$CanvasLayer2.hide()
+	$tutorial.show()
 
 func take_hit(bullet):
 	hit.emit(bullet)
@@ -53,7 +59,8 @@ func _on_hit(bullet):
 	$HitHurt.play()
 	print(name, " hit, health: ", health)
 	if health < 1:
-		queue_free()
+		position = out_of_bounds
+		$CanvasLayer2.show()
 
 func _on_heal_ditect_area_entered(area: Area2D) -> void:
 	health += heal_value
@@ -62,3 +69,15 @@ func _on_heal_ditect_area_entered(area: Area2D) -> void:
 		health=max_health
 	print("heal")
 	area.queue_free()
+
+#the buttons
+
+
+func _on_replay_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/game.tscn")
+
+func _on_menu_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	
+func _on_quit_pressed() -> void:
+	get_tree().quit()

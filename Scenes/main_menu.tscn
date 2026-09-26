@@ -1,6 +1,13 @@
 [gd_scene format=3 uid="uid://cy51cud6xsxiv"]
 
 [ext_resource type="Script" uid="uid://btcipl0nv65av" path="res://Scripts/main_menu.gd" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://bjgxf5lssi5f6" path="res://Assets/Background.png" id="2_48xlc"]
+[ext_resource type="Texture2D" uid="uid://cjmts03xu02l" path="res://Assets/Rose.png" id="3_cp0ys"]
+[ext_resource type="Texture2D" uid="uid://bxk7wcf0sbhyv" path="res://Assets/Cyan.png" id="4_yhxw7"]
+[ext_resource type="Texture2D" uid="uid://chtrei7h22de" path="res://Assets/Yellow.png" id="5_trj04"]
+[ext_resource type="Texture2D" uid="uid://dg5c4cnfcfla8" path="res://Assets/winscreen.jpeg" id="6_16hvj"]
+[ext_resource type="FontFile" uid="uid://dekcdy6gtqgik" path="res://Assets/Corpta DEMO.otf" id="7_vr1f0"]
+[ext_resource type="AudioStream" uid="uid://iaje6wg70ub8" path="res://Assets/idle.mp3" id="8_yhxw7"]
 
 [node name="MainMenu" type="Control" unique_id=54425403]
 layout_mode = 3
@@ -11,26 +18,133 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_28flt")
 
-[node name="Play" type="Button" parent="." unique_id=1521193407]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.505
-anchor_top = 0.509
-anchor_right = 0.505
-anchor_bottom = 0.509
-offset_left = -162.59998
-offset_top = -239.72003
-offset_right = 143.40002
-offset_bottom = -147.72003
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1712950415]
+position = Vector2(928, 528)
+scale = Vector2(0.3473307, 0.21191405)
+texture = ExtResource("2_48xlc")
 
-[node name="Quit" type="Button" parent="." unique_id=599585102]
-layout_mode = 0
+[node name="Texture" type="Node" parent="Sprite2D" unique_id=1738418298]
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D/Texture" unique_id=310201257]
+position = Vector2(112.000015, 984.0001)
+rotation = 0.9424778
+scale = Vector2(0.3664138, 0.34302106)
+texture = ExtResource("3_cp0ys")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Sprite2D/Texture" unique_id=764203587]
+position = Vector2(1407.9999, 136.00002)
+rotation = 4.0840707
+scale = Vector2(0.3664138, 0.34302106)
+texture = ExtResource("4_yhxw7")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D/Texture" unique_id=1553534004]
+position = Vector2(215.99991, 920)
+rotation = 0.9424778
+scale = Vector2(0.13914645, 0.15228446)
+texture = ExtResource("5_trj04")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sprite2D/Texture" unique_id=572044400]
+position = Vector2(328, 840)
+rotation = 0.9424778
+scale = Vector2(0.13914645, 0.15228446)
+texture = ExtResource("5_trj04")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Sprite2D/Texture" unique_id=1284391389]
+position = Vector2(439.99994, 760)
+rotation = 0.9424778
+scale = Vector2(0.13914645, 0.15228446)
+texture = ExtResource("5_trj04")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Sprite2D/Texture" unique_id=1496721420]
+position = Vector2(520, 695.99994)
+rotation = 0.9424778
+scale = Vector2(0.13914645, 0.15228446)
+texture = ExtResource("5_trj04")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Sprite2D/Texture" unique_id=171919542]
+position = Vector2(1232, 255.99995)
+rotation = 4.0840707
+scale = Vector2(0.13914645, 0.15228446)
+texture = ExtResource("5_trj04")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Sprite2D/Texture" unique_id=1222742309]
+position = Vector2(974.71576, 357.5998)
+rotation = 4.0840707
+scale = Vector2(0.13914645, 0.15228446)
+texture = ExtResource("5_trj04")
+
+[node name="Sprite2D10" type="Sprite2D" parent="Sprite2D/Texture" unique_id=1160826245]
+position = Vector2(1328, 191.99994)
+rotation = 4.0840707
+scale = Vector2(0.13914645, 0.15228446)
+texture = ExtResource("5_trj04")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=58886329]
+
+[node name="Sprite2D9" type="Sprite2D" parent="CanvasLayer" unique_id=1439674855]
+position = Vector2(952, 371.75897)
+rotation = 1.5707964
+scale = Vector2(0.14447898, 0.23539743)
+texture = ExtResource("6_16hvj")
+
+[node name="Sprite2D10" type="Sprite2D" parent="CanvasLayer" unique_id=1991464279]
+position = Vector2(951.99994, 563.75903)
+rotation = 1.5707964
+scale = Vector2(0.14447898, 0.23539743)
+texture = ExtResource("6_16hvj")
+
+[node name="play" type="Button" parent="CanvasLayer" unique_id=1563682988]
 offset_left = 808.0
-offset_top = 560.0
-offset_right = 1114.0
-offset_bottom = 652.0
+offset_top = 320.0
+offset_right = 1096.0
+offset_bottom = 424.0
+theme_override_fonts/font = ExtResource("7_vr1f0")
+theme_override_font_sizes/font_size = 32
+text = "PLAY"
 
-[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[node name="quit" type="Button" parent="CanvasLayer" unique_id=1494761122]
+offset_left = 808.0
+offset_top = 514.0
+offset_right = 1096.0
+offset_bottom = 618.0
+theme_override_fonts/font = ExtResource("7_vr1f0")
+theme_override_font_sizes/font_size = 32
+text = "QUIT
+"
+
+[node name="Sprite2D11" type="Sprite2D" parent="CanvasLayer" unique_id=1703212592]
+position = Vector2(952, 756.7592)
+rotation = 1.5707964
+scale = Vector2(0.14447898, 0.23539743)
+texture = ExtResource("6_16hvj")
+
+[node name="credits" type="Button" parent="CanvasLayer" unique_id=1669514046]
+offset_left = 808.0
+offset_top = 707.0
+offset_right = 1096.0
+offset_bottom = 811.0
+theme_override_fonts/font = ExtResource("7_vr1f0")
+theme_override_font_sizes/font_size = 32
+text = "CREDITS
+"
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=459122725]
+anchors_preset = -1
+anchor_right = 0.18300001
+anchor_bottom = 0.133
+offset_left = 632.0
+offset_top = 88.0
+offset_right = 911.64
+offset_bottom = 72.36
+theme_override_fonts/font = ExtResource("7_vr1f0")
+theme_override_font_sizes/font_size = 64
+text = "ARCADE SHOOTER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Idle" type="AudioStreamPlayer" parent="." unique_id=389184748]
+stream = ExtResource("8_yhxw7")
+
+[connection signal="pressed" from="CanvasLayer/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/credits" to="." method="_on_credits_pressed"]

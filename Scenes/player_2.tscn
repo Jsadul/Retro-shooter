@@ -7,12 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://vju7gf7gkr00" path="res://Assets/P2_hex_full.png" id="5_6cafw"]
 [ext_resource type="AudioStream" uid="uid://byyr00npym62y" path="res://Assets/hitHurt.mp3" id="6_6cafw"]
 [ext_resource type="AudioStream" uid="uid://dy5rywm6hkxkw" path="res://Assets/healsound.mp3" id="7_mtyrt"]
+[ext_resource type="Texture2D" uid="uid://dg5c4cnfcfla8" path="res://Assets/winscreen.jpeg" id="8_dgubp"]
+[ext_resource type="Texture2D" uid="uid://cjmts03xu02l" path="res://Assets/Rose.png" id="9_os74a"]
+[ext_resource type="FontFile" uid="uid://dekcdy6gtqgik" path="res://Assets/Corpta DEMO.otf" id="10_ggx0o"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wrm1d"]
 font_size = 150
 
 [node name="Player2" type="CharacterBody2D" unique_id=1007187380]
-position = Vector2(20, 0)
+position = Vector2(424, 552)
 script = ExtResource("1_cgts5")
 bullet = ExtResource("2_eus2p")
 
@@ -98,4 +101,86 @@ stream = ExtResource("6_6cafw")
 [node name="Healsound" type="AudioStreamPlayer" parent="." unique_id=412676835]
 stream = ExtResource("7_mtyrt")
 
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=74802000]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2" unique_id=1578125884]
+position = Vector2(960, 546)
+scale = Vector2(0.7231638, 0.67868847)
+texture = ExtResource("8_dgubp")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer2" unique_id=1251873062]
+position = Vector2(957, 248)
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_os74a")
+
+[node name="Label" type="Label" parent="CanvasLayer2" unique_id=1166397226]
+anchors_preset = -1
+anchor_right = 0.18300001
+anchor_bottom = 0.133
+offset_left = 832.0
+offset_top = 320.0
+offset_right = 736.64
+offset_bottom = 240.36
+theme_override_fonts/font = ExtResource("10_ggx0o")
+theme_override_font_sizes/font_size = 48
+text = "WINNER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="replay" type="Button" parent="CanvasLayer2" unique_id=1041423794]
+offset_left = 864.0
+offset_top = 472.0
+offset_right = 1056.0
+offset_bottom = 544.0
+theme_override_fonts/font = ExtResource("10_ggx0o")
+theme_override_font_sizes/font_size = 32
+text = "REPLAY"
+
+[node name="menu" type="Button" parent="CanvasLayer2" unique_id=895868094]
+offset_left = 864.0
+offset_top = 594.0
+offset_right = 1056.0
+offset_bottom = 666.0
+theme_override_fonts/font = ExtResource("10_ggx0o")
+theme_override_font_sizes/font_size = 32
+text = "MAIN MENU"
+
+[node name="quit" type="Button" parent="CanvasLayer2" unique_id=280560199]
+offset_left = 864.0
+offset_top = 712.0
+offset_right = 1074.0
+offset_bottom = 784.0
+theme_override_fonts/font = ExtResource("10_ggx0o")
+theme_override_font_sizes/font_size = 32
+text = "QUIT"
+
+[node name="tutorial" type="CanvasLayer" parent="." unique_id=95288346]
+
+[node name="ColorRect" type="ColorRect" parent="tutorial" unique_id=1361306223]
+offset_left = 64.0
+offset_top = 591.0
+offset_right = 640.0
+offset_bottom = 695.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="tutorial" unique_id=1559977066]
+anchors_preset = -1
+anchor_right = 0.18300001
+anchor_bottom = 0.133
+offset_left = 80.0
+offset_top = 546.0
+offset_right = 277.99985
+offset_bottom = 597.0
+theme_override_fonts/font = ExtResource("10_ggx0o")
+theme_override_font_sizes/font_size = 20
+text = "Use \"W,A,S,D\" arrow keys to move
+use \"space bar\" to shoot
+press any of the above keys to confirm"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="area_entered" from="HealDitect" to="." method="_on_heal_ditect_area_entered"]
+[connection signal="pressed" from="CanvasLayer2/replay" to="." method="_on_replay_pressed"]
+[connection signal="pressed" from="CanvasLayer2/menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer2/quit" to="." method="_on_quit_pressed"]

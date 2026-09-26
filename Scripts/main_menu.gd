@@ -7,7 +7,8 @@ func _on_quit_pressed():
 	get_tree().quit()
 
 
-#credits
-#	Dos88- music (space)
-# shapeforms (shoot)
-#pixabay (hurt)
+func _on_credits_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/credits.tscn")
+
+func _ready() -> void:
+	$Idle.play()

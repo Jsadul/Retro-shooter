@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://dssvbihgoxteb"]
+
+[ext_resource type="Script" uid="uid://c476w30mdy41x" path="res://Scripts/credits.gd" id="1_1bamb"]
+[ext_resource type="Texture2D" uid="uid://bjgxf5lssi5f6" path="res://Assets/Background.png" id="1_ccovl"]
+[ext_resource type="Texture2D" uid="uid://dg5c4cnfcfla8" path="res://Assets/winscreen.jpeg" id="2_1bamb"]
+[ext_resource type="FontFile" uid="uid://dekcdy6gtqgik" path="res://Assets/Corpta DEMO.otf" id="3_xelri"]
+[ext_resource type="AudioStream" uid="uid://iaje6wg70ub8" path="res://Assets/idle.mp3" id="5_xelri"]
+
+[node name="Credits" type="Control" unique_id=1388802385]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1088.0
+script = ExtResource("1_1bamb")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2004545083]
+position = Vector2(928, 528)
+scale = Vector2(0.3473307, 0.21191405)
+texture = ExtResource("1_ccovl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=987713960]
+position = Vector2(995.99994, 544)
+scale = Vector2(2.201936, 0.78688526)
+texture = ExtResource("2_1bamb")
+
+[node name="Label" type="Label" parent="." unique_id=22622488]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.18300001
+anchor_bottom = 0.133
+offset_left = 384.0
+offset_top = 192.0
+offset_right = 1304.64
+offset_bottom = 751.296
+theme_override_fonts/font = ExtResource("3_xelri")
+theme_override_font_sizes/font_size = 48
+text = "
+#Dos88- music (space)
+# shapeforms-music (shoot)
+#pixabay-music (hurt,background)
+#1001fonts -font (corpta)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=605603770]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.18300001
+anchor_bottom = 0.133
+offset_left = 384.0
+offset_top = 192.0
+offset_right = 1304.64
+offset_bottom = 375.29602
+theme_override_fonts/font = ExtResource("3_xelri")
+theme_override_font_sizes/font_size = 72
+text = "credits
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="." unique_id=1119307024]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.18300001
+anchor_bottom = 0.133
+offset_left = 384.0
+offset_top = 672.0
+offset_right = 1304.64
+offset_bottom = 855.296
+theme_override_fonts/font = ExtResource("3_xelri")
+theme_override_font_sizes/font_size = 18
+text = "All assets used fall under CC0 
+The font is free for personal use"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D11" type="Sprite2D" parent="." unique_id=1492516548]
+position = Vector2(489.19006, 924.4082)
+rotation = 1.5707964
+scale = Vector2(0.09895139, 0.17193891)
+texture = ExtResource("2_1bamb")
+
+[node name="menu" type="Button" parent="." unique_id=872358928]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 888.0
+offset_right = 594.0
+offset_bottom = 960.0
+theme_override_fonts/font = ExtResource("3_xelri")
+theme_override_font_sizes/font_size = 32
+text = "MAIN MENU"
+
+[node name="Idle" type="AudioStreamPlayer" parent="." unique_id=1746499345]
+stream = ExtResource("5_xelri")
+
+[connection signal="pressed" from="menu" to="." method="_on_menu_pressed"]

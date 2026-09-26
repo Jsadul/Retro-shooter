@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxfflbpb48cm"
-path="res://.godot/imported/Enamies.png-e4b5851e2f5ad3293e325f32ed7b016c.ctex"
+uid="uid://dg5c4cnfcfla8"
+path="res://.godot/imported/winscreen.jpeg-d9a6ec09b6e260ad21cf642ca3617340.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Enamies.png"
-dest_files=["res://.godot/imported/Enamies.png-e4b5851e2f5ad3293e325f32ed7b016c.ctex"]
+source_file="res://Assets/winscreen.jpeg"
+dest_files=["res://.godot/imported/winscreen.jpeg-d9a6ec09b6e260ad21cf642ca3617340.ctex"]
 
 [params]
 
