@@ -8,14 +8,15 @@ func get_input():
 		shoot()
 	if Input.is_action_just_pressed("T1"):
 		$tutorial.hide()
-
+	if health < max_health:
+		$tutorial.hide()
 #common code
 @export var speed = 500
 @export var rotation_speed = 5
 @export var bullet : PackedScene
 @export var max_health = 100
 @export var health = 0
-@export var damage = 25
+@export var damage = 10
 @export var heal_value = 20
 var out_of_bounds = Vector2(3000,3000)
 var recoil_strength = 1200

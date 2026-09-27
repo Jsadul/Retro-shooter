@@ -2,7 +2,7 @@ extends Node
 
 @export var heal_scene: PackedScene
 @export var map_size = Rect2(0, 0, 1920, 1080)
-@export var spawn_interval = 5
+@export var spawn_interval = 15
 
 func _ready():
 	var timer = Timer.new()

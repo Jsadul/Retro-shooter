@@ -8,6 +8,8 @@ func get_input():
 		shoot()
 	if Input.is_action_just_pressed("T2"):
 		$tutorial.hide()
+	if health < max_health:
+		$tutorial.hide()
 
 #common code
 @export var speed = 500
@@ -15,7 +17,7 @@ func get_input():
 @export var bullet : PackedScene
 @export var max_health = 100
 @export var health = 0
-@export var damage = 25
+@export var damage = 10
 @export var heal_value = 20
 var out_of_bounds = Vector2(3000,3000)
 var recoil_strength = 1200
@@ -36,7 +38,6 @@ func shoot():
 	var b = bullet.instantiate()
 	owner.add_child(b)
 	b.transform = $Muzzle.global_transform
-	
 	recoil_velocity -= transform.x * recoil_strength
 	
 signal hit(bullet)
